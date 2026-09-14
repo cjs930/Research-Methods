@@ -13,9 +13,13 @@
     .cols{display:grid;grid-template-columns:320px 1fr;gap:20px}
     .panel{border:1px solid #eef2f6;padding:12px;border-radius:6px;background:#fcfdff}
     .list{list-style:none;padding:0;margin:0}
-    .list li{padding:6px 8px;border-radius:4px;display:flex;justify-content:space-between;align-items:center}
+    .list li{padding:6px 8px;border-radius:4px;display:flex;align-items:center;gap:12px}
     .list li:hover{background:#f1f6fb}
     .dir{font-weight:600}
+    /* 讓左側區塊可縮放並自動換行，避免遮蓋右側按鈕 */
+    .list li > div:first-child{flex:1;min-width:0;display:flex;flex-direction:column}
+    .list li > div:last-child{flex:0 0 auto;white-space:nowrap}
+    .list li span{display:block;overflow-wrap:break-word;word-break:break-word}
     .meta{font-size:12px;color:#6b7280}
     a.file-link{color:#0b5fff;text-decoration:none}
     .readme{padding:16px}
